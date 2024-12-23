@@ -1,10 +1,10 @@
 public class Drone {
-    public final String uniqueId;
-    public String droneName;
-    public double droneWeight;
-    public double enginePower;
-    public double batteryLevel;
-    public static int counter;
+    private final String uniqueId;
+    private String droneName;
+    private double droneWeight;
+    private double enginePower;
+    private double batteryLevel;
+    private int counter;
 
     public Drone(String droneName, double droneWeight, double enginePower, double batteryLevel) {
         this.uniqueId = "Drone " + counter++;
@@ -43,6 +43,7 @@ public class Drone {
         System.out.println();
     }
 
+
     @Override
     public String toString() {
         return "Drone{" +
@@ -52,5 +53,26 @@ public class Drone {
                 ", enginePower=" + enginePower +
                 ", batteryLevel=" + batteryLevel +
                 '}';
+    }
+
+    // Gettery
+
+    public double getEnginePower() {
+        return enginePower;
+    }
+    public double getBatteryLevel(){
+        return batteryLevel;
+    }
+    public double getDroneWeight() {
+        return droneWeight;
+    }
+
+    // Settery
+
+    public void setBatteryLevel(double batteryLevel) {
+        this.batteryLevel = batteryLevel;
+    }
+    public void setDroneWeight(double droneWeight) {
+        this.droneWeight = droneWeight;
     }
 }
