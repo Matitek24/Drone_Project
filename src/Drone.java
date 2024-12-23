@@ -30,9 +30,9 @@ public class Drone {
             System.out.println(droneName + "Nie mozemy lecieć bo nie mamy wystarczającą ilość baterii");
         }
     }
-    public void revEngine(){
+    public void revEngine() throws DroneWeightException{
         if (droneWeight == 0) {
-            throw new IllegalArgumentException("Waga drona nie moze być równa 0");
+            throw new DroneWeightException("Waga drona nie moze być równa 0");
         }
 
         int limit = (int) (enginePower / droneWeight);

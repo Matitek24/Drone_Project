@@ -24,7 +24,13 @@ public class Main {
 
         Drone fastestDrone = racingDrone.race(droneArray);
         System.out.println("Najszybszy dron: " + fastestDrone);
-        racingDrone.revEngine();
+
+        try{
+            racingDrone.revEngine();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
 
     }
 }

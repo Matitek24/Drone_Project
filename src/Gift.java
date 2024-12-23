@@ -21,4 +21,13 @@ public class Gift {
     public String toString() {
         return "Gift( " + nameOfContent +  " || " + giftWeight + ")";
     }
+
+    // Gettery
+
+    public boolean getIsReadyToBeDelivered() {
+        return isReadyToBeDelivered;
+    }
+    public int getGiftWeight() {
+        return giftWeight;
+    }
 }
