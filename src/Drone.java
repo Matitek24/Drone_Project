@@ -46,7 +46,7 @@ public class Drone {
 
     @Override
     public String toString() {
-        return "Drone{" +
+        return "Drone{ " +
                 "uniqueId='" + uniqueId + '\'' +
                 ", name='" + droneName + '\'' +
                 ", weight=" + droneWeight +
