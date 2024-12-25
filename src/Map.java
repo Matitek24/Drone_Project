@@ -25,4 +25,9 @@ public class Map {
         isDangerous = false;
         System.out.println(namePoint + " został oznaczony jako bezpieczny.");
     }
+
+    @Override
+    public String toString() {
+        return "Nazwa punktu " + namePoint + " DANE: " + dataInPoint + " Czy punkt jest groźny " + isDangerous;
+    }
 }

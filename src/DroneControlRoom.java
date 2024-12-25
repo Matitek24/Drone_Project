@@ -35,15 +35,14 @@ public class DroneControlRoom {
         }
     }
 
-    public void findMostPowerfulDrones() throws DroneException {
+    public Drone findMostPowerfulDrones() throws DroneException {
         if (allDrones == null || allDrones.length == 0) {
-           throw new DroneException("Nie znaleziona dronów");
+            throw new DroneException("Nie znaleziono dronów");
         }
-        Drone mostPowerful = findMostPowerful2(0, allDrones[0]);
-        System.out.println("Najpotężniejszy dron: " + mostPowerful);
+        return findMostPowerfulDrones(0, allDrones[0]);
     }
 
-    public Drone findMostPowerful2 (int index, Drone currentMax) {
+    public Drone findMostPowerfulDrones (int index, Drone currentMax) {
         if (index == allDrones.length) {
             return currentMax;
         }
@@ -51,7 +50,15 @@ public class DroneControlRoom {
         if (allDrones[index].getEnginePower() > currentMax.getEnginePower()) {
             currentMax = allDrones[index];
         }
-        return findMostPowerful2(++index, currentMax);
+        return findMostPowerfulDrones(++index, currentMax);
     }
 
+    @Override
+    public String toString() {
+        String result = super.toString();
+        for (Drone drone: allDrones) {
+            result += "\n" + drone;
+        }
+        return result;
+    }
 }

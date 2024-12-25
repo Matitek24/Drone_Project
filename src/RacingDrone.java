@@ -41,7 +41,7 @@ extends Drone{
 
     @Override
     public String toString(){
-        return super.toString() + ", Team " + racingTeam +
+        return "Drone Wyscigowy" + super.toString() + ", Team " + racingTeam +
                 ", Pozycja w rankingu " + positionInRanking;
     }
 

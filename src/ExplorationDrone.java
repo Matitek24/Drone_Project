@@ -40,6 +40,7 @@ extends Drone{
         if(!points[index].isDangerous()){
             data = points[index].getDataInPoint();
         }
+            points[index].markSafe();
            return data;
     }
     public void fastPowerCharge(){

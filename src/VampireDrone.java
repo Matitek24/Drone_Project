@@ -28,4 +28,9 @@ extends Drone{
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vampire Drone " + super.toString() + "Construckotor " +  construcktor;
+    }
+
 }

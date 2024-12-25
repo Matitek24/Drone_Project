@@ -28,12 +28,13 @@ public class Main {
         try{
             racingDrone.revEngine();
         }
-        catch(Exception e){
+        catch(DroneException e){
             System.out.println(e);
         }
 
-        System.out.print("\u001B[31m |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>| \u001B[0m \n");
-        System.out.print("\u001B[31m |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>| \u001B[0m");
+        System.out.print("\u001B[31m |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>| \n");
+        System.out.println("\t\t\t DRON EKSPLORACYJNY");
+        System.out.print(" |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>|  \u001B[0m \n");
 
         Map[] points = {
                 new Map("PointA", "Znaleziono minerały", false),
@@ -55,7 +56,7 @@ public class Main {
         expDrone.explore(0, 10.0); // Punkt A
         expDrone.explore(3, 20.0); // Punkt D
         expDrone.explore(1, 15.0); // Punkt B
-        expDrone.explore(4, 100.0); // Punkt B
+        expDrone.explore(4, 100.0); // Punkt E
 
         System.out.println("\nNieodkryte punkty:");
         expDrone.UndiscoveredPoints(0);
