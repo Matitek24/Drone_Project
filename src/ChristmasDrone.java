@@ -19,7 +19,7 @@ extends Drone{
 
     @Override
     public String toString() {
-        return "Christmas Drone " +  super.toString() + "With: " + gift;
+        return  super.toString() + " - Christmas Drone" ;
     }
 
 }

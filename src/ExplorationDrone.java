@@ -70,8 +70,7 @@ extends Drone{
 
     }
 
-    @Override
-    public String toString() {
+    public String presentCheckPoints(){
         String result = super.toString() + "\nZdobył punkty ";
         for (int i = 0; i < checkPoints.length; i++) {
             for (int j = 0; j < checkPoints[i].length; j++) {
@@ -81,6 +80,11 @@ extends Drone{
             }
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+     return super.toString() + " - Drone Eksploracyjny";
     }
 
 }

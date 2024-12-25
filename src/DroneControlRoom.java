@@ -21,16 +21,30 @@ public class DroneControlRoom {
         }
     }
     public void addNewDrone(Drone drone){
-        allDrones[allDrones.length-1] = drone;
+
+        for (int i = 0; i < allDrones.length; i++) {
+            if (allDrones[i] == null) {
+                allDrones[i] = drone;
+                return;
+            }
+        }
+
+        Drone[] newDrones = new Drone[allDrones.length + 1];
+        for (int i = 0; i < allDrones.length; i++) {
+            newDrones[i] = allDrones[i];
+        }
+        newDrones[allDrones.length] = drone;
+        allDrones = newDrones;
     }
 
     public void sortAllDrones(){
-        for(int i=0; i<allDrones.length-1; i++){
-            if(allDrones[i].getDroneWeight() > allDrones[i+1].getDroneWeight()){
-
-                Drone temp = allDrones[i];
-                allDrones[i] = allDrones[i+1];
-                allDrones[i+1] = temp;
+        for (int i = 0; i < allDrones.length - 1; i++) {
+            for (int j = 0; j < allDrones.length - i - 1; j++) {
+                if (allDrones[j].getDroneWeight() > allDrones[j + 1].getDroneWeight()) {
+                    Drone temp = allDrones[j];
+                    allDrones[j] = allDrones[j + 1];
+                    allDrones[j + 1] = temp;
+                }
             }
         }
     }
@@ -55,7 +69,7 @@ public class DroneControlRoom {
 
     @Override
     public String toString() {
-        String result = super.toString();
+        String result = "";
         for (Drone drone: allDrones) {
             result += "\n" + drone;
         }

@@ -2,10 +2,11 @@ public class VampireDrone
 extends Drone{
 
     private final String construcktor = "Bram Stoker";
-    private boolean isDoneBat = false;
+    private boolean isDoneBat;
 
-    public VampireDrone(String droneName, double droneWeight, double enginePower, double batteryLevel) {
+    public VampireDrone(String droneName, double droneWeight, double enginePower, double batteryLevel, boolean isDoneBat) {
         super(droneName, droneWeight, enginePower, batteryLevel);
+        this.isDoneBat = isDoneBat;
     }
 
     public void drainEnergy(Drone drone) {
@@ -24,13 +25,13 @@ extends Drone{
             isDoneBat = true;
             setBatteryLevel(getBatteryLevel() / 2);
             setDroneWeight(getDroneWeight() / 2);
-            System.out.println("Przekształcony w bat Drone");
+            System.out.println("Przekształcenie powiodło się");
         }
     }
 
     @Override
     public String toString() {
-        return "Vampire Drone " + super.toString() + "Construckotor " +  construcktor;
+        return  super.toString() + " - Vampire Drone " + "Construckotor " +  construcktor;
     }
 
 }

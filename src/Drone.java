@@ -1,5 +1,5 @@
 public class Drone {
-    private static int counter = 0;
+    private static int counter = 1;
     private final String uniqueId;
     private String droneName;
     private double droneWeight;
@@ -25,9 +25,10 @@ public class Drone {
     public void fly(double distance){
         if(batteryLevel > distance){
             batteryLevel -= distance;
+            System.out.println("Udalo sie polecieć ");
         }
         else{
-            System.out.println(droneName + "Nie mozemy lecieć bo nie mamy wystarczającą ilość baterii");
+            System.out.println(droneName + " Nie mozemy lecieć bo nie mamy wystarczającą ilość baterii");
         }
     }
     public void revEngine() throws DroneException {
