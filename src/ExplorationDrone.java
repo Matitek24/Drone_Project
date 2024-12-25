@@ -47,7 +47,7 @@ extends Drone{
         setBatteryLevel(getBatteryLevel() + 10);
     }
 
-    public void printUndiscoveredPoints(int index) {
+    public void UndiscoveredPoints(int index) {
       if(index >= points.length){
           return;
       }
@@ -55,7 +55,7 @@ extends Drone{
       boolean isDiscovered = false;
 
       for(int i = 0; i < pointCheck; i++){
-          if(checkPoints[index][0] != null && checkPoints[i][0].equals(points[index].getNamePoint())){
+          if(checkPoints[i][0] != null && checkPoints[i][0].equals(points[index].getNamePoint())){
               isDiscovered = true;
               break;
           }
@@ -65,7 +65,7 @@ extends Drone{
           System.out.println("Nieodkryty punkt to jeszcze " + points[index].getNamePoint());
       }
 
-      printUndiscoveredPoints(index + 1);
+      UndiscoveredPoints(index + 1);
 
     }
 
@@ -74,13 +74,12 @@ extends Drone{
         String result = super.toString() + "\nZdobył punkty ";
         for (int i = 0; i < checkPoints.length; i++) {
             for (int j = 0; j < checkPoints[i].length; j++) {
-                result += checkPoints[i][j] + "\n";
+                if(checkPoints[i][j] != null){
+                    result += checkPoints[i][j] + "\n";
+                }
             }
         }
         return result;
     }
-
-
-
 
 }

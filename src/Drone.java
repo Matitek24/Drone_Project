@@ -1,13 +1,13 @@
 public class Drone {
+    private static int counter = 0;
     private final String uniqueId;
     private String droneName;
     private double droneWeight;
     private double enginePower;
     private double batteryLevel;
-    private int counter;
 
     public Drone(String droneName, double droneWeight, double enginePower, double batteryLevel) {
-        this.uniqueId = "Drone " + counter++;
+        this.uniqueId = "Drone" + counter++;
         this.droneName = droneName;
         this.droneWeight = droneWeight;
         this.enginePower = enginePower;
@@ -30,9 +30,9 @@ public class Drone {
             System.out.println(droneName + "Nie mozemy lecieć bo nie mamy wystarczającą ilość baterii");
         }
     }
-    public void revEngine() throws DroneWeightException{
+    public void revEngine() throws DroneException {
         if (droneWeight == 0) {
-            throw new DroneWeightException("Waga drona nie moze być równa 0");
+            throw new DroneException("Waga drona nie moze być równa 0");
         }
 
         int limit = (int) (enginePower / droneWeight);
@@ -46,13 +46,12 @@ public class Drone {
 
     @Override
     public String toString() {
-        return "Drone{ " +
-                "uniqueId='" + uniqueId + '\'' +
+        return "\u001B[36m Drone{ " + " \u001B[0m" +
+                "\u001B[32m uniqueId='" + uniqueId + '\'' +
                 ", name='" + droneName + '\'' +
                 ", weight=" + droneWeight +
                 ", enginePower=" + enginePower +
-                ", batteryLevel=" + batteryLevel +
-                '}';
+                ", batteryLevel=" + batteryLevel + " \u001B[0m" + "\u001B[36m } \u001B[0m";
     }
 
     // Gettery

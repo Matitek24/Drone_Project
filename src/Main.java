@@ -32,36 +32,39 @@ public class Main {
             System.out.println(e);
         }
 
-        System.out.println("=========================");
+        System.out.print("\u001B[31m |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>| \u001B[0m \n");
+        System.out.print("\u001B[31m |>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>| \u001B[0m");
 
-        // Tworzymy punkty eksploracji
         Map[] points = {
                 new Map("PointA", "Znaleziono minerały", false),
                 new Map("PointB", "Obszar niebezpieczny", true),
                 new Map("PointC", "Potencjalne surowce", false),
-                new Map("PointD", "Nowe odkrycia", false)
+                new Map("PointD", "Nowe odkrycia", false),
+                new Map("PointE", "Zloze Diamentów", false)
         };
 
-        // Tworzymy drona eksploracyjnego
-        ExplorationDrone drone2 = new ExplorationDrone("ExplorerX", 10.0, 25.0, 50.0, 30.0, points);
+        ExplorationDrone expDrone = new ExplorationDrone(
+                "ExplorerX",
+                10.0,
+                25.0,
+                100.0,
+                30.0,
+                points);
 
-        // Eksploracja niektórych punktów
         System.out.println("\nEksploracja punktów:");
-        drone2.explore(0, 10.0); // Punkt A
-        drone2.explore(3, 20.0); // Punkt D
-        drone2.explore(1, 15.0); // Punkt B (niebezpieczny, nie będzie danych)
+        expDrone.explore(0, 10.0); // Punkt A
+        expDrone.explore(3, 20.0); // Punkt D
+        expDrone.explore(1, 15.0); // Punkt B
+        expDrone.explore(4, 100.0); // Punkt B
 
-        // Wyświetlenie nieodkrytych punktów za pomocą metody rekurencyjnej
         System.out.println("\nNieodkryte punkty:");
-        drone2.printUndiscoveredPoints(0);
+        expDrone.UndiscoveredPoints(0);
 
-        // Naładowanie baterii drona
         System.out.println("\nŁadowanie baterii:");
-        drone2.fastPowerCharge();
+        expDrone.fastPowerCharge();
 
-        // Wyświetlenie stanu drona po eksploracji
         System.out.println("\nStan drona po eksploracji:");
-        System.out.println(drone2);
+        System.out.println(expDrone);
     }
 }
 

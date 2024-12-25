@@ -19,7 +19,7 @@ extends Drone{
         return drone;
     }
     @Override
-    public void revEngine() throws DroneWeightException {
+    public void revEngine() throws DroneException {
        super.revEngine();
         System.out.println("ZOOOOOOOOOM");
     }
