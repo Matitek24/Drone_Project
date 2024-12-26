@@ -15,14 +15,14 @@ public class Drone {
     }
 
     public boolean checkFlyParameter(){
-        boolean check = false;
-        if(enginePower > batteryLevel && enginePower > droneWeight){
-            check = true;
-        }
-        return check;
+        return enginePower > batteryLevel && enginePower > droneWeight;
     }
 
     public void fly(double distance){
+        if (distance <= 0) {
+            System.out.println("Dystans musi być większy niż 0");
+            return;
+        }
         if(batteryLevel > distance){
             batteryLevel -= distance;
             System.out.println("Udalo sie polecieć ");
@@ -34,6 +34,9 @@ public class Drone {
     public void revEngine() throws DroneException {
         if (droneWeight == 0) {
             throw new DroneException("Waga drona nie moze być równa 0");
+        }
+        if (enginePower <= 0) {
+            throw new DroneException("Moc silnika musi być większa od 0");
         }
 
         int limit = (int) (enginePower / droneWeight);

@@ -5,14 +5,14 @@ public class DroneControlRoom {
     public DroneControlRoom(Drone[] allDrones) {
         this.allDrones = allDrones;
     }
-    public void countDronesThatCanFly(){
+    public int countDronesThatCanFly(){
         int count = 0;
         for(Drone drone: allDrones){
             if(drone.getEnginePower() > drone.getDroneWeight() && drone.getBatteryLevel() > 0){
                 count++;
             }
         }
-        System.out.println(count);
+        return count;
     }
 
     public void chargeAllDrones(){

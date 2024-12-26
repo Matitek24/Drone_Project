@@ -13,6 +13,13 @@ extends Drone{
         this.points = pointMap;
         this.checkPoints = new String[points.length][2];
     }
+    public ExplorationDrone(String droneName, double droneWeight, double enginePower, double batteryLevel, Map[] pointMap) {
+        super(droneName, droneWeight, enginePower, batteryLevel);
+        this.range = 100;
+        this.pointCheck = 0;
+        this.points = pointMap;
+        this.checkPoints = new String[points.length][2];
+    }
 
     public void explore(int index, double distance){
         String name = points[index].getNamePoint();

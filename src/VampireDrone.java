@@ -1,7 +1,7 @@
 public class VampireDrone
 extends Drone{
 
-    private final String construcktor = "Bram Stoker";
+    private final String constructor = "Bram Stoker";
     private boolean isDoneBat;
 
     public VampireDrone(String droneName, double droneWeight, double enginePower, double batteryLevel, boolean isDoneBat) {
@@ -31,7 +31,7 @@ extends Drone{
 
     @Override
     public String toString() {
-        return  super.toString() + " - Vampire Drone " + "Construckotor " +  construcktor;
+        return super.toString() + " - Vampire Drone (Constructor: " + constructor + ")";
     }
 
 }
