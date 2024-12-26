@@ -49,6 +49,10 @@ public class DroneControlRoom {
         }
     }
 
+
+    //Tutaj zastosowanie dwoch metod ktore sa rekurencyjne jest ciekawym rozwiązaniem:
+    //Funkcja rekurencyjna nie musi znać szczegółów wstępnego sprawdzania danych wejściowych robi to funkcja wywołująca. Dzięki temu kod jest bardziej elastyczny.
+
     public Drone findMostPowerfulDrones() throws DroneException {
         if (allDrones == null || allDrones.length == 0) {
             throw new DroneException("Nie znaleziono dronów");

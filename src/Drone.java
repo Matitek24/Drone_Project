@@ -48,6 +48,7 @@ public class Drone {
     }
 
 
+    //Ciekawym urozmaiceniem w projekcie jest dodatkowe oznaczenie koloroami elementow drona co pomaga w czytelności na konsoli
     @Override
     public String toString() {
         return "\u001B[36m Drone{ " + " \u001B[0m" +

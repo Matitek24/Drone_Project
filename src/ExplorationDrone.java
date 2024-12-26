@@ -55,6 +55,7 @@ extends Drone{
         setBatteryLevel(getBatteryLevel() + 10);
     }
 
+    // ******  Najciekawsze rozwiązanie w tej klasie uzyłem rekrencji aby znajdywac punkty które nie zostały odkryte
     public void UndiscoveredPoints(int index) {
       if(index >= points.length){
           return;

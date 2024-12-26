@@ -3,6 +3,7 @@ extends Drone{
     private String racingTeam;
     private int positionInRanking;
 
+    // Tutaj ciekawą rzeczą jest przeciązenie kostrukotra jest to przydatne do elastycznosci danych ktore moze podac uzytkownik.
     public RacingDrone(String droneName, double droneWeight, double enginePower, double batteryLevel ,String racingTeam, int positionInRacing) {
         super(droneName, droneWeight, enginePower, batteryLevel);
         this.racingTeam = racingTeam;
